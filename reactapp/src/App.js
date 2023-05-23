@@ -1,17 +1,11 @@
-
 import './App.css';
+import React from 'react';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
-    <center><h3>Login Page</h3>
-   <label>Email : </label>
-   <input type="text"></input><br/>
-   <label>Password : </label>
-   <input type="text"></input><br/>
-   <button>Login</button>
-
-    </center>
-    
+  <SignUp/>  
   );
 }
 
