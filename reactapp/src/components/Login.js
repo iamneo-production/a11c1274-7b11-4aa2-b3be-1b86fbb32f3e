@@ -1,36 +1,25 @@
 import React from 'react'
-import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import { Box, Typography } from '@mui/material'
-import {Link} from "react-router-dom";
-
+import {Link} from 'react-router-dom';
 
 const Login = () => {
- 
   return (
-    <div>
-    <center> Login Page
-      <Box  sx={{width: 300,height: 300}}>
-      <Form inline >
-      <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-          <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-          <Input type="email" name="email" id="Emailid" placeholder="Enter Email id" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword" className="mr-sm-2">Password</Label>
-          <Input type="password" name="password" id="emailPassword" placeholder="Enter password " />
-        </FormGroup>
-      </Form>
-        <div style ={{ width:'50px',display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
-         <Button   outline color="primary" >Login</Button><br/>
+    <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
+    <div className='bg-white p-3 rounded-2 w-25'>
+      <form action="">
+        <div className='mb-3'>
+          <label htmlFor="email"><strong>Email</strong></label>
+          <input type="email" placeholder='Enter Email' className='form-control rounded-3'/>
         </div>
-        </Box>
-        </center>
-        <div>
-
+        <div className='mb-3'>
+          <label htmlFor="password"><strong>Password</strong></label>
+          <input type="password" placeholder='Enter Password'  className='form-control rounded-3'/>
         </div>
-      
-
-        </div>
+        <button className='btn btn-success w-100 rounded-3'>Log in</button><br/>
+        <p>forgot password?<Link>click me</Link></p>
+        <Link to="/signup" className='btn btn-default border w-100 bg-light rounded-3 text-decoration-none'>Create Account</Link>
+      </form>
+    </div>
+  </div>
   )
 }
 
