@@ -1,22 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
-
+import validation from './LoginValidation';
+import './Loginpage.css';
+import { Button} from 'reactstrap';
 const Login = () => {
+
+  const [values,setValues]=useState({
+    email:'',
+    password:''
+  })
+  const [errors,setErrors]=useState({})
+  const handleInput=(e)=>{
+      setValues(prev=>({...prev,[e.target.name]:[e.target.value]}))
+  }
+  const handlerSubmit=(e)=>{
+    e.preventDefault();
+    setErrors(validation(values));
+  }
   return (
-    <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
-    <div className='bg-white p-3 rounded-2 w-25'>
-      <form action="">
-        <div className='mb-3'>
+    <div >
+    <div className='Maincontainer'>
+      <h2>Sign-In</h2>
+      <form action="" onSubmit={handlerSubmit}>
+        <div >
           <label htmlFor="email"><strong>Email</strong></label>
-          <input type="email" placeholder='Enter Email' className='form-control rounded-3'/>
+          <input  type="email"  className='input-but' name='email' placeholder='Enter Email'  onChange={handleInput}/>
+          {errors.email && <spam className='text-danger'> {errors.email} </spam>}
         </div>
-        <div className='mb-3'>
+        <br/>
+        <div >
           <label htmlFor="password"><strong>Password</strong></label>
-          <input type="password" placeholder='Enter Password'  className='form-control rounded-3'/>
+          <input className='input-but' type="password" name='password' placeholder='Enter Password' onChange={handleInput}/>
+          {errors.password && <spam className='text-danger'> {errors.password} </spam>}
         </div>
-        <button className='btn btn-success w-100 rounded-3'>Log in</button><br/>
-        <p>forgot password?<Link>click me</Link></p>
-        <Link to="/signup" className='btn btn-default border w-100 bg-light rounded-3 text-decoration-none'>Create Account</Link>
+       <br/>
+       <div >
+        <button type='submit' className='button'>Log in</button>
+        <p>forgot password?<Link>click here</Link></p>
+        <Link to="/signup"><Button type="submit" className='button'  >Create Account  </Button></Link>
+        </div>
       </form>
     </div>
   </div>
