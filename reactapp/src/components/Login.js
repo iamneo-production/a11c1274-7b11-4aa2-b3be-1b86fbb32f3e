@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
-import validation from './LoginValidation';
 import './Loginpage.css';
 import { Button} from 'reactstrap';
 const Login = () => {
@@ -15,11 +14,11 @@ const Login = () => {
   }
   const handlerSubmit=(e)=>{
     e.preventDefault();
-    setErrors(validation(values));
+    
   }
   return (
+    <div  >
     <div >
-    <div className='Maincontainer'>
       <h2>Sign-In</h2>
       <form action="" onSubmit={handlerSubmit}>
         <div >

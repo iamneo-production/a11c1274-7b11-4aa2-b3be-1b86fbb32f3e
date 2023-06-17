@@ -28,7 +28,8 @@ const SignUp = () => {
 }
 
   return (
-    <div className='Maincontainer-signup' >
+    <div >
+    <div  >
        <Box  sx={{width: 500,height: 300,padding:9}}>
        <h2><center>Sign-Up</center></h2>
       <Form onSubmit={handleForm}>
@@ -76,7 +77,7 @@ const SignUp = () => {
       </Form>
       </Box>
       
-      
+      </div>
     </div>
   )
 }
