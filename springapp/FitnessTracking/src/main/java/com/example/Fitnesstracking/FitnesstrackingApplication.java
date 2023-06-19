@@ -1,5 +1,6 @@
 package com.example.Fitnesstracking;
 
+<<<<<<< HEAD
 import java.util.List;
 
 
@@ -66,3 +67,6 @@ public class FitnesstrackingApplication implements CommandLineRunner{
 
 	}
 }
+=======
+//Kiran update here pls
+>>>>>>> cb5e1ccbf58c84e29c09f6f89d67813513e9c310
