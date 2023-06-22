@@ -2,6 +2,7 @@ package com.example.Fitnesstracking.controller;
 
 
 
+
 import java.security.Principal;
 
 
@@ -58,7 +59,7 @@ public class AuthController {
 
 		JwtAuthResponse response = new JwtAuthResponse();
 		response.setToken(token);
-		//response.setUser(this.mapper.map((User) userDetails, UserDto.class));
+		response.setUserdto(this.mapper.map((Users) userDetails, UserDto.class));
 		return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
 	}
 
