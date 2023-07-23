@@ -23,18 +23,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import java.util.stream.Stream;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.security.web.util.matcher.RequestMatcher;
 
 import com.example.Fitnesstracking.security.CustomUserDetailService;
 import com.example.Fitnesstracking.security.JwtAutenticationEntryPoint;
 import com.example.Fitnesstracking.security.JwtAuthenticationFilter;
 
 //import com.codewithdurgesh.blog.security.CustomUserDetailService;
-import org.springframework.security.web.util.matcher.RequestMatcher;
+
 
 @Configuration
 @EnableWebSecurity
@@ -42,12 +37,9 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
-
-    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**", "/v3/api-docs", "/v2/api-docs",
-            "/swagger-resources/**", "/swagger-ui/**", "/webjars/**", "/api/v1/auth/register","/api/v1/send-otp","/api/v1/resend-otp","/api/v1/verify-otp"
+    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**","/swagger-resources/**", "/swagger-ui/**", "/webjars/**", "/api/v1/auth/register","/api/v1/send-otp","/api/v1/resend-otp","/api/v1/verify-otp"
 
     ,"/api/v1/set-password"};
-
     @Autowired
     private CustomUserDetailService customUserDetailService;
 
@@ -65,7 +57,7 @@ public class SecurityConfig {
         csrf()
         .disable()
         .authorizeHttpRequests()
-        .requestMatchers(getRequestMatchers(PUBLIC_URLS))
+        .requestMatchers(PUBLIC_URLS)
         .permitAll()
         .anyRequest()
         .authenticated()
@@ -83,11 +75,6 @@ public class SecurityConfig {
         return defaultSecurityFilterChain;
 
 
-    }
-    private RequestMatcher[] getRequestMatchers(String[] urls) {
-        return Stream.of(urls)
-                .map(AntPathRequestMatcher::new)
-                .toArray(RequestMatcher[]::new);
     }
 
 

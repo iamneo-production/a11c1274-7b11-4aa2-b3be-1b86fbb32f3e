@@ -15,4 +15,9 @@ public interface SetsServices {
     Sets updateSetsById(int id, Sets sets);
 
     void deleteSetsById(int id);
+    
+    long getTotalNumberOfSets();
+
+
+	List<Integer> findSetIdsByExerciseId(int id);
 }

@@ -1,25 +1,24 @@
 package com.example.Fitnesstracking.payloads;
 
 
-
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import com.example.Fitnesstracking.entities.Goals;
 import com.example.Fitnesstracking.entities.Role;
+import com.example.Fitnesstracking.entities.Workout;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -54,13 +53,13 @@ public class UserDto {
     
 
 
-    
-    private List<Goals> goals = new ArrayList();
-
 	
 	private Set<RoleDto> roles = new HashSet<>();
 	
+	private List<Workout> workouts;
 	
+	 private List<Goals> goals;
+	 
 	public UserDto() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -142,6 +141,14 @@ public class UserDto {
 		this.gender = gender;
 	}
 
+	public List<Workout> getWorkouts() {
+		return workouts;
+	}
+
+	public void setWorkouts(List<Workout> workouts) {
+		this.workouts = workouts;
+	}
+
 	public List<Goals> getGoals() {
 		return goals;
 	}
@@ -149,8 +156,9 @@ public class UserDto {
 	public void setGoals(List<Goals> goals) {
 		this.goals = goals;
 	}
-
+	
 	
 
-}
 
+	
+}
