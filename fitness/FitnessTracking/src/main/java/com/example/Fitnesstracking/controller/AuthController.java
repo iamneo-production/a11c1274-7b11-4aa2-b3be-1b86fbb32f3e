@@ -2,12 +2,12 @@ package com.example.Fitnesstracking.controller;
 
 
 
-
 import java.security.Principal;
 
 
 
-import javax.validation.Valid;
+
+import jakarta.validation.Valid;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,6 +38,9 @@ import com.example.Fitnesstracking.services.UsersServices;
 @RestController
 @RequestMapping("/api/v1/auth/")
 public class AuthController {
+
+	@Autowired
+	private ModelMapper mapper;
 
 	@Autowired
 	private JwtTokenHelper jwtTokenHelper;
@@ -83,27 +86,22 @@ public class AuthController {
 
 	@PostMapping("/register")
 	public ResponseEntity<UserDto> registerUser(@Valid @RequestBody UserDto userDto) {
-		UserDto registeredUser = this.userService.registerNewUser(userDto);
-		return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
-	}
-	
-	@PostMapping("/registerAdmin")
-	public ResponseEntity<UserDto> registerAdmin(@Valid @RequestBody UserDto userDto) {
-		UserDto registeredUser = this.userService.registerNewAdmin(userDto);
-		return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
-	}
 
-	// get loggedin user data
-	@Autowired
-	private UsersDao userRepo;
-	@Autowired
-	private ModelMapper mapper;
 
-	@GetMapping("/current-user/")
-	public ResponseEntity<UserDto> getUser(Principal principal) {
-		Users user = this.userRepo.findByEmail(principal.getName()).get();
-		return new ResponseEntity<UserDto>(this.mapper.map(user, UserDto.class), HttpStatus.OK);
-	}
+		String email = userDto.getEmail();
+		System.out.print(email);
+		if(email.endsWith("@virtusa.com")) {
+			UserDto registeredUser = this.userService.registerNewAdmin(userDto);
+			System.out.println("@Virtusa email here");
+			return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
+		}
+		else {
+			UserDto registeredUser = this.userService.registerNewUser(userDto);
+			return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
+		}
+		}
+
+
+
 
 }
-
