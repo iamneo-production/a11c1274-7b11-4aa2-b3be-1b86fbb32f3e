@@ -16,7 +16,7 @@ public class Goals {
     private int targetValue;
     private String timeFrame;
     private String additionalNotes;
-    private boolean is_completed;
+    private String is_completed;
 
 
     @ManyToOne
@@ -37,23 +37,13 @@ public class Goals {
         super();
     }
 
-    public Goals(int goal_id, String goalType, String goalMetric, int targetValue, String timeFrame,
-                 String additionalNotes, boolean is_completed) {
-        super();
+    public Goals(int goal_id, String goalType, String goalMetric, int targetValue, String timeFrame, String additionalNotes, String is_completed) {
         this.goal_id = goal_id;
         this.goalType = goalType;
         this.goalMetric = goalMetric;
         this.targetValue = targetValue;
         this.timeFrame = timeFrame;
         this.additionalNotes = additionalNotes;
-        this.is_completed = is_completed;
-    }
-
-    public boolean isIs_completed() {
-        return is_completed;
-    }
-
-    public void setIs_completed(boolean is_completed) {
         this.is_completed = is_completed;
     }
 
@@ -105,5 +95,11 @@ public class Goals {
         this.additionalNotes = additionalNotes;
     }
 
-}
+    public String getIs_completed() {
+        return is_completed;
+    }
 
+    public void setIs_completed(String is_completed) {
+        this.is_completed = is_completed;
+    }
+}

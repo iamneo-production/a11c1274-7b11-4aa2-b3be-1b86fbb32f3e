@@ -1,6 +1,9 @@
 package com.example.Fitnesstracking.entities;
- 
-import javax.persistence.GeneratedValue;
+
+import jakarta.persistence.GeneratedValue;
+
+
+
 import java.util.Collection;
 
 import java.util.HashSet;
@@ -10,25 +13,26 @@ import java.util.stream.Collectors;
 
 
 
-import javax.annotation.Generated;
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import jakarta.annotation.Generated;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
 @Entity
 @Table
@@ -36,7 +40,7 @@ public class Users implements UserDetails{
 
     //instance variables
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id; //primary key
     
     @Column(name = "user_name", nullable = false, length = 100)
@@ -53,7 +57,7 @@ public class Users implements UserDetails{
     private String gender;
     
     
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "id"))
 	private Set<Role> roles = new HashSet<>();
 
@@ -210,4 +214,7 @@ public class Users implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
+
+
+
 }

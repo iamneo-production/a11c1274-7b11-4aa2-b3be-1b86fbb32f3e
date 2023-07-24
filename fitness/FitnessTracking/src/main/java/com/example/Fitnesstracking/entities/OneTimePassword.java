@@ -1,5 +1,6 @@
 package com.example.Fitnesstracking.entities;
 
+
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
