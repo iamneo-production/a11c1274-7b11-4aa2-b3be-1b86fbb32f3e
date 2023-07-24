@@ -14,5 +14,9 @@ import org.springframework.stereotype.Repository;
 public interface GoalsDao extends JpaRepository<Goals,Integer> {
     @Query(value = "select * from goals where user_id =:id",nativeQuery = true)
     List<Goals> getGoalsByUserId(@Param("id") int id);
-}
 
+    @Query(value = "select count(*) from goals",nativeQuery = true)
+    int getTotalGoals();
+
+
+}
