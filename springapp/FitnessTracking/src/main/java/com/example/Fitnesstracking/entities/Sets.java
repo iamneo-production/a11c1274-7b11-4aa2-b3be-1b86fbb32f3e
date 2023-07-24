@@ -42,3 +42,5 @@ public class Sets {
         this.duration = duration;
         this.is_completed=is_completed;
     }
+    
+}
