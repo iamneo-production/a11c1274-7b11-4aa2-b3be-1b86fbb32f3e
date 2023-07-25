@@ -1,0 +1,81 @@
+.main{
+  background-image: url("https://img.freepik.com/free-photo/dumbbells-flat-lay-pink-yellow_1220-3951.jpg?w=2000");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bfp-calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-label {
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 200px;
+    margin-right: 10px;
+  }
+  
+  input[type="number"],
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 5px 0;
+    width: 200px;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .calculate-button-3 {
+    margin-left: 225px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calculate-button:hover {
+    background-color: #45a049;
+  }
+  
+  .bfp-result {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .bfp-result h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .bfp-result p {
+    font-size: 18px;
+  }
+  
+  .back-2{
+    margin-left: 210px;
+  }
