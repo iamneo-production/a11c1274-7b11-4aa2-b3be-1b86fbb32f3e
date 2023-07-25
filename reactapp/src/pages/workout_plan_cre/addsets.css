@@ -1,0 +1,133 @@
+.sets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+
+.sets-container {
+  display: flex;
+  width: 760px;
+  height: 620px;
+  margin-right: 200px;
+  margin-left:200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.timeone-icon{
+  color: black;
+}
+.fitness-icon{
+  color: black;
+}
+.timer-icon{
+  color: black;
+}
+
+.sets-section{
+  flex: 1;
+  padding: 20px;
+}
+
+.close-icon-3 {
+  color: #141b2b;
+  top: 110px;
+  right: 400px;
+  
+  cursor: pointer;
+  position: absolute;
+}
+
+.back-icon-3 {
+  color: #141b2b;
+  top: 110px;
+  margin-right: 1000px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.input::placeholder {
+  color: #948e8e; 
+ }
+
+
+.sets-section-title h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-bottom: 30px;
+  color: #0f0744;
+}
+
+.sets-form-group {
+  margin-bottom: 20px;
+}
+
+.sets-input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #004350;
+  border-radius: 4px;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sets-input-container:hover{
+  border: 2px solid #5d77b4;
+}
+
+.sets-input-container input,
+.sets-input-container textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+
+
+.input-icon {
+  border: none;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.button-container button{
+  justify-content: center;
+  align-items: center;
+  background-color: #141b2b;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  width: 20%;
+  box-sizing: border-box;
+  margin-right: 15px;
+}
+
+.add-sets-button:hover ,
+.next-button:hover{
+  background-color: #5d77b4;
+  box-shadow: 0 2px 4px rgba(1, 1, 1, 1);
+  transform: translateY(-2px);
+}
+
+
