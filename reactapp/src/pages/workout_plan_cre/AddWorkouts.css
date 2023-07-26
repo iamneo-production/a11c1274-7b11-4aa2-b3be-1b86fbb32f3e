@@ -1,0 +1,142 @@
+.workout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+.label{
+  font-weight: bold;
+  color: rgb(10, 9, 9);
+}
+.timer-icon{
+  color:black;
+  margin-right: 5px;
+}
+.descrp-icon{
+  color: black;
+  margin-right: 5px;
+}
+
+.workout-container {
+  display: flex;
+  width: 760px;
+  height: 570px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-right: 150px;
+  margin-left: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.workout-section{
+  flex: 1;
+  padding: 20px;
+  margin-top: 0px;
+}
+
+
+input:hover,
+input:focus {
+  outline:none;
+  border: 2px solid ;
+  color: #000000; 
+}
+
+ input::placeholder {
+  color: #948e8e; 
+ }
+
+
+
+.workout-section-title h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-bottom: 30px;
+  color: #0f0744;
+}
+
+
+
+.workout-input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #004350; 
+  border-radius: 4px;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 92%;
+  margin-bottom: 20px;
+  
+}
+
+.workout-input-container:hover{
+  border: 2px solid #5d77b4;
+}
+
+.workout-input-container input,
+.workout-input-container textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+
+
+.input-icon {
+  border: none;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+
+
+ 
+.button-container button{
+  justify-content: center;
+  align-items: center;
+  background-color: #141b2b;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  width: 20%;
+  box-sizing: border-box;
+  margin-right: 50px;
+}
+
+
+.add-workout-button:hover ,
+.next-button:hover{
+  background-color: #5d77b4;
+  box-shadow: 0 2px 4px rgba(1, 1, 1, 1);
+  transform: translateY(-2px);
+}
+
+.heading-back-close{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  justify-items: center;
+}

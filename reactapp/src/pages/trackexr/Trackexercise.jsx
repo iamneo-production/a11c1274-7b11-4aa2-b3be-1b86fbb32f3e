@@ -65,6 +65,7 @@ const Trackexercise = () => {
   };
   
   
+  
   const handleShowExerciseDetails = (wid) => {
       const dataString = localStorage.getItem('data');
       const data = JSON.parse(dataString);
