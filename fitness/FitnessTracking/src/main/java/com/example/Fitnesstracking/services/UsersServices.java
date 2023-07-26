@@ -13,7 +13,7 @@ import com.example.Fitnesstracking.payloads.RadarItem;
 import com.example.Fitnesstracking.payloads.UserDto;
 import com.example.Fitnesstracking.payloads.Userbyid;
 
-import jakarta.mail.MessagingException;
+import javax.mail.MessagingException;
 
 public interface UsersServices {
 
@@ -69,7 +69,7 @@ public interface UsersServices {
 
 	List<Long> getnotcompltedarray(int id);
 
-	List<Long> getotalarray(int id);
+	List<Long> gettotalarray(int id);
 	
     Map<String, Integer> getTotalUsersAvgWorkoutDuration();
 }

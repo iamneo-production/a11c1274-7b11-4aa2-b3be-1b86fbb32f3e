@@ -1,5 +1,8 @@
 package com.example.Fitnesstracking.config;
 
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -37,9 +40,18 @@ import com.example.Fitnesstracking.security.JwtAuthenticationFilter;
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
-    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**","/swagger-resources/**", "/swagger-ui/**", "/webjars/**", "/api/v1/auth/register","/api/v1/send-otp","/api/v1/resend-otp","/api/v1/verify-otp"
+    public static final String[] PUBLIC_URLS = {
+        "/api/v1/auth/**",
+        "/swagger-resources/**",
+        "/swagger-ui/**",
+        "/webjars/**",
+        "/api/v1/auth/register",
+        "/api/v1/send-otp",
+        "/api/v1/resend-otp",
+        "/api/v1/verify-otp",
+        "/api/v1/set-password"
+};
 
-    ,"/api/v1/set-password"};
     @Autowired
     private CustomUserDetailService customUserDetailService;
 
@@ -51,13 +63,16 @@ public class SecurityConfig {
     		
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    RequestMatcher[] requestMatchers = new AntPathRequestMatcher[PUBLIC_URLS.length];
+    for (int i = 0; i < PUBLIC_URLS.length; i++) {
+        requestMatchers[i] = new AntPathRequestMatcher(PUBLIC_URLS[i]);
+    }
 
-        http.
-        csrf()
-        .disable()
+    http
+        .csrf().disable()
         .authorizeHttpRequests()
-        .requestMatchers(PUBLIC_URLS)
+        .requestMatchers(requestMatchers)
         .permitAll()
         .anyRequest()
         .authenticated()
@@ -67,15 +82,14 @@ public class SecurityConfig {
         .sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        http.authenticationProvider(daoAuthenticationProvider());
-        DefaultSecurityFilterChain defaultSecurityFilterChain = http.build();
+    http.authenticationProvider(daoAuthenticationProvider());
+    DefaultSecurityFilterChain defaultSecurityFilterChain = http.build();
 
-        return defaultSecurityFilterChain;
+    return defaultSecurityFilterChain;
+}
 
-
-    }
 
 
 
