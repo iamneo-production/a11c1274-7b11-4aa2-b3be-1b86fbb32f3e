@@ -119,4 +119,10 @@ public class WorkoutServicesImpl implements WorkoutServices{
 		return null;
 	}
 
+
+    @Override
+    public List<Workout> getCompletedWorkoutsByUserId(int id) {
+        return this.workoutDao.getCompletedWorkoutsByUserId(id);
+    }
+
 }

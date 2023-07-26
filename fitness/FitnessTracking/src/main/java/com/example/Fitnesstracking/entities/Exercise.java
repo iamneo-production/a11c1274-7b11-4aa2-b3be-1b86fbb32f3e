@@ -2,7 +2,7 @@ package com.example.Fitnesstracking.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.List;
 
