@@ -1,0 +1,334 @@
+.navbar-brand {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Add or remove the bold style as desired */
+    text-transform: uppercase; /* Convert the text to uppercase if desired */
+    text-align: center; /* Align the text to the center if desired */
+  
+  }
+  .navbar-brand {
+    background: linear-gradient(45deg, blue, green);
+    -webkit-background-clip: text; /* For Safari */
+    -webkit-text-fill-color: transparent; /* For Safari */
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  .table-wrapper {
+    width: 60%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.5px solid #ffffff;
+  }
+  
+  .content-wrapper {
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    width: 100%; /* Set the width to 100% of the parent container */
+  }
+  .table-wrapper table {
+    background-color: rgb(238, 238, 228);
+      border-radius: 10px;
+  
+  }
+  
+  .table-wrapper thead th {
+    background-color: rgb(238, 238, 228);
+    font-family: Palatino, serif;
+  }
+  
+  .table-wrapper tbody tr:hover {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .table-wrapper tbody tr td button {
+    margin: 2px;
+    padding: 5pzx 10px;
+    font-size: 12px;
+  }
+  
+  .table-wrapper tbody tr td button:first-of-type {
+    background-color: rgb(16, 149, 16);
+    border-radius: 3px;
+  }
+  
+  .table-wrapper tbody tr td button:last-of-type {
+    background-color: rgb(191, 55, 55);
+    border-radius: 3px;
+  }
+  
+  .user-details {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(238, 238, 228);
+    border-radius: 5px;
+    padding: 20px;
+    font-family: Palatino, serif;
+  }
+  
+  .user-details p {
+    margin: 5px 0;
+  }
+  
+  .user-details .back-to-dashboard {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .user-details .back-to-dashboard button {
+    background-color: red;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .user-details .workouts-goals-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .user-details .workouts-goals-buttons button {
+    background-color: rgb(35, 180, 190);
+    margin: 0 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    color: #fef9f9;
+    cursor: pointer;
+  }
+  .user-details-container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .user-details-table {
+    width: 100%;
+  }
+  
+  .user-details-table td {
+    padding: 10px;
+  }
+  
+  .goals-table-wrapper {
+    width: 80%;
+    margin: 30px auto;
+  
+    font-family: Palatino, serif;
+  }
+  
+  .goals-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+  }
+  
+  .goals-table-wrapper thead th {
+    background-color: rgba(240, 240, 240, 0.534);
+    font-family: Palatino, serif;
+    padding: 10px;
+    text-align: left;
+    background-color: rgb(238, 238, 228);
+    color: #000; /* Add the desired text color here */
+  }
+  
+  .goals-table-wrapper tbody tr {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .goals-table-wrapper tbody tr:hover {
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .goals-table-wrapper tbody td {
+    padding: 20px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+  
+  .goals-table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .workouts-table-wrapper {
+    width: 80%;
+    margin: 20px auto;
+  
+    border-radius: 5px;
+    font-family: Palatino, serif;
+  }
+  
+  .workouts-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+  }
+  
+  .workouts-table-wrapper thead {
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .workouts-table-wrapper thead th {
+    font-family: Palatino, serif;
+    padding: 10px;
+    text-align: left;
+    padding-left: 10px; /* Adjust the value as needed */
+    color: #333; /* Specify your desired text color here */
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .workouts-table-wrapper tbody tr {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .workouts-table-wrapper tbody tr:hover {
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .workouts-table-wrapper tbody td {
+    padding: 15px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+  
+  .workouts-table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .workouts-table-wrapper button {
+    background-color: rgb(
+      35,
+      180,
+      190
+    ); /* Specify your desired button color here */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  .workouts-table-wrapper .completed {
+    background-color: rgb(27, 219, 27);
+  }
+  
+  .workouts-table-wrapper .incomplete {
+    background-color: red;
+  }
+  .workouts-table-wrapper .completed.completion-status {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 12px;
+    font-size: 14px;
+  }
+  .workouts-table-wrapper .completed.completion-status {
+    background-color: rgb(128, 9, 0);
+    color: white;
+    border-radius: 10px;
+    padding: 5px 12px;
+    font-size: 14px;
+  }
+  
+  .exercises-table-wrapper {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-family: Palatino, serif;
+  }
+  
+  .exercises-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+  }
+  
+  .exercises-table-wrapper thead {
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .exercises-table-wrapper thead th {
+    font-family: Palatino, serif;
+    padding: 10px;
+    text-align: left;
+    padding-left: 10px; /* Adjust the value as needed */
+    color: #333; /* Specify your desired text color here */
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .exercises-table-wrapper tbody tr {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .exercises-table-wrapper tbody tr:hover {
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .exercises-table-wrapper tbody td {
+    padding: 10px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+  }
+  
+  .exercises-table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .exercises-table-wrapper button {
+    background-color: rgb(
+      35,
+      180,
+      190
+    ); /* Specify your desired button color here */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .sets-table-wrapper {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-family: Palatino, serif;
+  }
+  
+  .sets-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+  }
+  
+  .sets-table-wrapper thead {
+    background-color: rgb(238, 238, 228);
+    border-top: 1px solid #fff;
+  }
+  
+  .sets-table-wrapper thead th {
+    font-family: Palatino, serif;
+    padding: 10px;
+    text-align: left;
+    padding-left: 10px; /* Adjust the value as needed */
+    background-color: rgb(238, 238, 228);
+    color: #040404; /* Specify your desired text color here */
+  }
+  
+  .sets-table-wrapper tbody tr {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .sets-table-wrapper tbody tr:hover {
+    background-color: rgb(238, 238, 228);
+  }
+  
+  .sets-table-wrapper tbody td {
+    padding: 10px;
+    border-bottom: 3px solid rgb(221, 221, 221);
+  }
+  
+  .sets-table-wrapper tbody tr:last-child td {
+    border-bottom: none;
+  }

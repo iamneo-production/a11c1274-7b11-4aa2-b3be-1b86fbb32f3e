@@ -1,0 +1,88 @@
+.main{
+  background-image: url("https://img.freepik.com/free-photo/dumbbells-flat-lay-pink-yellow_1220-3951.jpg?w=2000");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bmi-calculator-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 90vh;
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    color: black;
+  }
+
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-right:15px;
+  }
+  input[type="number"],
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 5px 0;
+    width: 200px;
+  }
+  
+  
+  .calculate-button-1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: 120px;
+  }
+  
+  .calculate-button:hover {
+    background-color: #45a049;
+  }
+
+  .image-container {
+    /* display: flex-end; */
+    /* float: right;   */
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    right: -1020px;
+    /* justify-content: center;
+    align-items: center; */
+    
+     
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .button-container{
+    width: 30%;
+  }
+
+  .back-next{
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 10pxpx 25px;
+
+  }
