@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from 'react';
 import '../../index.css';
-import CloseIcon from '@mui/icons-material/Close';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import TimerIcon from '@mui/icons-material/Timer';
-import DescriptionIcon from '@mui/icons-material/Description';
+// import CloseIcon from '@mui/icons-material/Close';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import TimerIcon from '@mui/icons-material/Timer';
+// import DescriptionIcon from '@mui/icons-material/Description';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getWorkoutsByWorkoutId,putWorkoutById,getValidationWorkoutCompletion } from '../../services/user-service';
 import Swal from 'sweetalert2';
@@ -111,11 +111,11 @@ const UpdateWorkouts = ()=>{
             <div className="rectangle"></div>
                 <div className="workout-container">
                     <div className="workout-section">
-                        <div className="close-icon-1">
-                            <CloseIcon onClick={() => navigate("/user/workoutsplan")} />
+                        <div onClick={() => navigate("/user/workoutsplan")}>
+                            ❌
                      </div>
-                    <div className="back-icon-1">
-                    <ArrowBackIcon onClick={() => navigate("/user/workoutsplan")} />
+                    <div onClick={() => navigate("/user/workoutsplan")}>
+                      🔙
                  </div>
             <div className="workout-section-title"> 
                 <h2>Add Workouts</h2>
@@ -137,9 +137,7 @@ const UpdateWorkouts = ()=>{
 
             <div className="workout-form-group">
               <div className="workout-input-container">
-                <div className='timer-icon'>
-                <TimerIcon/> 
-                </div>
+            
                 <input
                   
                   type="number"
@@ -154,9 +152,6 @@ const UpdateWorkouts = ()=>{
 
             <div className="workout-form-group">
               <div className="workout-input-container">
-                <div className='descrp-icon'>
-                <DescriptionIcon/>
-                </div>
                 <textarea
                   placeholder="Enter workout Description"
                   className="input-icon"
