@@ -4,7 +4,7 @@ import '../../index.css';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import './workoutplancreator.css';
-import AddIcon from '@mui/icons-material/Add';
+// import AddIcon from '@mui/icons-material/Add';
 
 const Workoutplancre = () => {
   const navigate = useNavigate();
@@ -19,13 +19,13 @@ const Workoutplancre = () => {
             <div className="button-group">
             
             
-                <Button  startIcon={<AddIcon/>} className='btn btn-workout' onClick={()=> navigate('/user/addworkouts')}>Add Workouts</Button> 
+                <Button className='btn btn-workout' onClick={()=> navigate('/user/addworkouts')}>Add Workouts</Button> 
             
             
-                <Button  startIcon={<AddIcon/>} className='btn btn-exercise' onClick={()=> navigate('/user/addexercises')}>Add Exercise</Button>
+                <Button className='btn btn-exercise' onClick={()=> navigate('/user/addexercises')}>Add Exercise</Button>
             
             
-                <Button  startIcon={<AddIcon/>} className='btn btn-sets' onClick={()=> navigate('/user/addsets')}>Add sets</Button>
+                <Button className='btn btn-sets' onClick={()=> navigate('/user/addsets')}>Add sets</Button>
             </div>
             </div>
       </main> 

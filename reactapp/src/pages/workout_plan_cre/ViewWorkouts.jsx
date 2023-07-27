@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import Sidebar from '../global/Sidebar';
 import '../../index.css';
 import { getWorkout,deleteWorkoutById } from '../../services/user-service';
-import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+// import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
+// import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './viewexercises.css';
@@ -86,8 +86,8 @@ const handleDelete = (id)=>{
                         <td>{item.is_completed}</td>
                         <td>{item.Actions}
                             <div className='action-icons'>
-                            <EditNoteOutlinedIcon onClick={()=>handelupdate(item.workoutId)}/>
-                            <DeleteForeverIcon  onClick={()=>handleDelete(item.workoutId)}/>
+                            <span onClick={()=>handelupdate(item.workoutId)}>edit</span>
+                            <span  onClick={()=>handleDelete(item.workoutId)}>del</span>
                             </div>
                         </td>
                     </tr>
