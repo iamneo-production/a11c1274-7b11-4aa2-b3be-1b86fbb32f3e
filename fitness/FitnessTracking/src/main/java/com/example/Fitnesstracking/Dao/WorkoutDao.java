@@ -42,4 +42,6 @@ public interface WorkoutDao extends JpaRepository<Workout,Integer> {
 
     @Query(value="select *from workout where user_id =:id", nativeQuery = true)
     List<Workout> getWorkoutsGraphByUserId(@Param("id") int id);
+
+    
 }

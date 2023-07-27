@@ -38,7 +38,7 @@ import com.example.Fitnesstracking.payloads.Allusers;
 import com.example.Fitnesstracking.payloads.UserDto;
 import com.example.Fitnesstracking.payloads.Userbyid;
 
-import jakarta.mail.MessagingException;
+import javax.mail.MessagingException;
 
 import com.example.Fitnesstracking.entities.Workout;
 @Service
@@ -893,50 +893,37 @@ public class UsersServicesImpl implements UsersServices{
 	}
 
 	@Override
-	public List<Long> getotalarray(int id) {
+	public List<Long> gettotalarray(int id) {
 		// get workouts for user id
-		long workouts = this.workoutServices.getWorkoutsByUserId(id).size();
+		long workouts = this.workoutDao.getWorkoutsGraphByUserId(id).size();
 
 
 		// get exercises for user id
 		List<Exercise> exerciseforuserid = new ArrayList<>();
-		List<Workout> workoutforuserid =  this.workoutServices.getWorkoutsByUserId(id);
+		List<Workout> workoutforuserid =  this.workoutDao.getWorkoutsGraphByUserId(id);
 		long exercises = 0;
 		 for (Workout workout : workoutforuserid) {
 	            int w_id =  workout.getWorkoutId();
 	            exerciseforuserid.addAll(exerciseServices.getExerciseByWorkoutId(w_id));
-	            //exercises += exerciseServices.getExerciseByWorkoutId(w_id).size();
 	        }
 		exercises = exerciseforuserid.size();
 
-
-		// get sets for user id
-		List<Sets> setsforuserid = new ArrayList<>();
-		long sets = 0;
-	            for(Exercise exc : exerciseforuserid) {
-	            	int e_id = exc.getExerciseId();
-	            	setsforuserid.addAll(setsServices.getSetsByExerciseId(e_id));
-	            }
-		 sets = setsforuserid.size();
 
 
 		List<Goals> goalsbyuserid = this.goalsServices.getGoalsUserById(id);
 		long goals = goalsbyuserid.size();
 
 		long total_workouts = 0;
-		long total_sets = 0;
 		long total_exr = 0;
 		long total_goals = 0;
 
 		total_workouts = workouts;
 		total_exr = exercises;
-		total_sets = sets;
 		total_goals = goals;
 
 		List<Long> totals = new ArrayList<>();
 		totals.add(total_workouts);
 		totals.add(total_exr);
-		totals.add(total_sets);
 		totals.add(total_goals);
 
 
@@ -981,55 +968,5 @@ public class UsersServicesImpl implements UsersServices{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	@Override
-	public List<Long> getotalarray(int id) {
-		// get workouts for user id
-		long workouts = this.workoutServices.getWorkoutsByUserId(id).size();
-
-
-		// get exercises for user id
-		List<Exercise> exerciseforuserid = new ArrayList<>();
-		List<Workout> workoutforuserid =  this.workoutServices.getWorkoutsByUserId(id);
-		long exercises = 0;
-		 for (Workout workout : workoutforuserid) {
-	            int w_id =  workout.getWorkoutId();
-	            exerciseforuserid.addAll(exerciseServices.getExerciseByWorkoutId(w_id));
-	            //exercises += exerciseServices.getExerciseByWorkoutId(w_id).size();
-	        }
-		exercises = exerciseforuserid.size();
-
-
-		// get sets for user id
-		List<Sets> setsforuserid = new ArrayList<>();
-		long sets = 0;
-	            for(Exercise exc : exerciseforuserid) {
-	            	int e_id = exc.getExerciseId();
-	            	setsforuserid.addAll(setsServices.getSetsByExerciseId(e_id));
-	            }
-		 sets = setsforuserid.size();
-
-
-		List<Goals> goalsbyuserid = this.goalsServices.getGoalsUserById(id);
-		long goals = goalsbyuserid.size();
-
-		long total_workouts = 0;
-		long total_sets = 0;
-		long total_exr = 0;
-		long total_goals = 0;
-
-		total_workouts = workouts;
-		total_exr = exercises;
-		total_sets = sets;
-		total_goals = goals;
-
-		List<Long> totals = new ArrayList<>();
-		totals.add(total_workouts);
-		totals.add(total_exr);
-		totals.add(total_sets);
-		totals.add(total_goals);
-
-
-		return totals;
-
-	}
+	
 }
