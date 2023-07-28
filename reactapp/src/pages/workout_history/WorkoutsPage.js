@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../global/Sidebar';
 import './WorkoutHistory.css';
 import { getCompletedWorkouts,deleteWorkoutById } from '../../services/user-service';
-import DeleteIcon from '@mui/icons-material/Delete';
+// import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from "sweetalert2";
 
 const WorkoutsPage = () => {
@@ -54,7 +54,7 @@ const WorkoutsPage = () => {
         <td>{workout.notes}</td>
         <td>{getStatusLabel(workout.is_completed)}</td>
         <td><button onClick={() => handleDeleteWorkouts(workout.workoutId)}>
-              <DeleteIcon/>
+              Delete
             </button></td>
       </tr>
     ));
