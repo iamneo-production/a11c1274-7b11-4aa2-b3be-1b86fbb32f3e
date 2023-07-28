@@ -28,7 +28,7 @@ import Addworkouts from "./pages/workout_plan_cre/Addworkouts";
 import Addexercises from "./pages/workout_plan_cre/Addexercises";
 import Addsets from "./pages/workout_plan_cre/Addsets";
 
-import NotFoundPage from "./pages/global/NotFoundPage";
+
 import Admindashboard from "./components/Adminops";
 import { useEffect, useState } from "react";
 
