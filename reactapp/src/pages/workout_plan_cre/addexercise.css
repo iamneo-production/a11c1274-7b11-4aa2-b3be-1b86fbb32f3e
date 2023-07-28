@@ -1,0 +1,113 @@
+.exercise {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+.label{
+  font-weight: bold;
+  margin-right: 740px;
+ 
+}
+
+.exercise-container {
+  display: flex;
+  width: 760px;
+  height: 570px;
+  margin-left: 200px;
+  margin-right: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.exercise-section{
+  flex: 1;
+  padding: 20px;
+}
+
+
+.input::placeholder {
+  color: #948e8e; 
+ }
+
+
+.exercise-section-title h2{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-bottom: 30px;
+  color: #0f0744;
+}
+
+.exercise-form-group {
+  margin-bottom: 20px;
+}
+.fitness-icon{
+  color: black;
+  margin-right: 5px;
+}
+.icons{
+  color: black;
+}
+
+.exercise-input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #004350;
+  border-radius: 4px;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 92%;
+  margin-bottom: 20px;
+}
+
+.exercise-input-container:hover{
+  border: 2px solid #5d77b4;
+}
+
+.exercise-input-container input,
+.exercise-input-container textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+.exercise-input-container input:hover{
+  border: none;
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.button-container button{
+  justify-content: center;
+  align-items: center;
+  background-color: #141b2b;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  width: 20%;
+  box-sizing: border-box;
+  margin-right: 50px;
+}
+.add-exercise-button:hover ,
+.next-button:hover{
+  background-color: #5d77b4;
+  box-shadow: 0 2px 4px rgba(1, 1, 1, 1);
+  transform: translateY(-2px);
+}
