@@ -50,11 +50,16 @@
   
   .action-icons {
     display: flex;
+    flex-direction: row;
+    gap: 5px;
     justify-content: center;
     align-items: center;
     size: 20px;
   }
   
+  .action-icons span{
+    border: 1px solid black;
+  }
   .action-icons svg {
     margin: 0 5px;
     cursor: pointer;
