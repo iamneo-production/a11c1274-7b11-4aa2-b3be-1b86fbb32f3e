@@ -1,6 +1,8 @@
 package com.example.Fitnesstracking.entities;
- 
-import javax.persistence.GeneratedValue;
+
+
+
+
 import java.util.Collection;
 
 import java.util.HashSet;
@@ -8,27 +10,12 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
-
-import javax.annotation.Generated;
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
+import org.hibernate.annotations.Cascade;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import javax.persistence.*;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
 
 @Entity
 @Table
@@ -36,7 +23,7 @@ public class Users implements UserDetails{
 
     //instance variables
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; //primary key
     
     @Column(name = "user_name", nullable = false, length = 100)
@@ -53,7 +40,7 @@ public class Users implements UserDetails{
     private String gender;
     
     
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role", referencedColumnName = "id"))
 	private Set<Role> roles = new HashSet<>();
 
@@ -210,4 +197,7 @@ public class Users implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
+
+
+
 }
