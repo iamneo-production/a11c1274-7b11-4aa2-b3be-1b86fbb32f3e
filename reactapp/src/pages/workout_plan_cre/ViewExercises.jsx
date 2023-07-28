@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+// import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
+// import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../global/Sidebar';
 import '../../index.css';
@@ -74,8 +74,8 @@ const ViewExercises = () => {
                     <td>
                       {item.Actions}
                       <div className='action-icons'>
-                        <EditNoteOutlinedIcon onClick={() => navigate(`/user/update-exercise/${item.exerciseId}`)} />
-                        <DeleteForeverIcon onClick={() => handleExerciseDelete(item.exerciseId)} />
+                        <span onClick={() => navigate(`/user/update-exercise/${item.exerciseId}`)} >edit</span>
+                        <span onClick={() => handleExerciseDelete(item.exerciseId)} >del</span>
                       </div>
                     </td>
                   </tr>

@@ -3,9 +3,9 @@ import { UpdateExercise,getExerciseById } from '../../services/user-service';
 import { useNavigate, useParams } from "react-router-dom";
 import '../../index.css';
 import Swal from 'sweetalert2';
-import CloseIcon from '@mui/icons-material/Close';
-import DescriptionIcon from '@mui/icons-material/Description';
-import  FitnessCenterIcon  from '@mui/icons-material/FitnessCenter';
+// import CloseIcon from '@mui/icons-material/Close';
+// import DescriptionIcon from '@mui/icons-material/Description';
+// import  FitnessCenterIcon  from '@mui/icons-material/FitnessCenter';
 import '../../components/css/signUp.css';
 
 import './addexercise.css';
@@ -74,8 +74,8 @@ console.log(data)
       <div className="exercise-container">
         
         <div className="exercise-section">
-        <div className="close-icon-2">
-            <CloseIcon onClick={()=>navigate("/user/workoutsplan")} />
+        <div onClick={()=>navigate("/user/workoutsplan")}>
+            ❌
           </div>
           <div className="exercise-section-title">
             <h2>Update Exercises</h2>
@@ -85,9 +85,6 @@ console.log(data)
     
           <div className="exercise-form-group">
             <div className="exercise-input-container">
-              <div className='fitness-icon'>
-              <FitnessCenterIcon/>
-              </div>
               <input
                 type="text"
                 placeholder="Enter Exercise Name"
@@ -101,9 +98,7 @@ console.log(data)
 
           <div className="exercise-form-group">
             <div className="exercise-input-container">
-              <div className='descrp-icon'>
-              <DescriptionIcon/>
-              </div>
+              
               <textarea
                 placeholder="Enter Exercise Description"
                 className="input-icon"

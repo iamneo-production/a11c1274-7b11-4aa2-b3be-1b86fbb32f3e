@@ -4,8 +4,8 @@ import './../../index.css';
 import { Box, useTheme} from "@mui/material";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import PersonIcon from '@mui/icons-material/Person';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+// import PersonIcon from '@mui/icons-material/Person';
+// import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import StatBox from './StatBox';
 import APieChart from './APieChart';
 import { useEffect } from 'react';
@@ -72,11 +72,11 @@ const Admindash = () => {
                                     title="Users"
                                     subtitle="Total number of users- "
                                     increase={totalusers} //not done workouts 
-                                    icon={
-                                    <PersonIcon
-                                        sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                                    />
-                                    }
+                                    // icon={
+                                    // <PersonIcon
+                                    //     sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                                    // />
+                                    // }
                                 />
              
                             </Box>  
@@ -91,11 +91,11 @@ const Admindash = () => {
                                     title="Average time period"
                                     subtitle="average time spend on workouts- "
                                     increase={avgtimeperiod} //not done workouts 
-                                    icon={
-                                    <AccessTimeIcon
-                                        sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                                    />
-                                    }
+                                    // icon={
+                                    // <AccessTimeIcon
+                                    //     sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                                    // />
+                                    // }
                                 />
              
                             </Box>
