@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-
+import "react-pro-sidebar/dist/css/styles.css";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ import { doLogout, isLoggedIn } from "../../auth";
 import { useNavigate } from "react-router-dom";
 
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+const Item = ({ title, to, selected, setSelected }) => {
   const handleUrlClick = (e, to) => {
     const currentUrl = window.location.href;
     console.log("redirecting url --> ", to);
@@ -32,7 +32,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         color: colors.grey[100],
       }}
       onClick={() => setSelected(title)}
-      icon={icon}
+      //icon={icon}
     >
       <Typography>{title}</Typography>
       <Link to={to} onClick={(e) => handleUrlClick(e, to)} />
