@@ -1,7 +1,7 @@
 package com.example.Fitnesstracking.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.util.List;
@@ -15,7 +15,9 @@ public class Workout {
     @SequenceGenerator(name = "workout_seq", sequenceName = "workout_sequence", initialValue = 1, allocationSize = 1)
     private int workoutId; //primary key
     private String date;
-    private int duration;
+
+    
+    private int duration=0;
     
     
     @Column(length = 30000) 

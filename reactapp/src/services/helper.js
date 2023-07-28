@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "../auth";
 import Swal from "sweetalert2";
 
-export const BASE_URL = "http://localhost:5050/api/v1";
+export const BASE_URL = "https://8080-dffeeddcbeacbeceabaeaeaadbdbabf.project.examly.io/api/v1";
 
 export const myAxios = axios.create({
   baseURL: BASE_URL,

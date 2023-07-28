@@ -385,8 +385,8 @@ public class MyController {
 	}
 
 	@GetMapping("api/v1/getotalarray/{id}")
-	public List<Long>  getotalarray(@PathVariable int id){
-		return this.usersServices.getotalarray(id);
+	public List<Long>  gettotalarray(@PathVariable int id){
+		return this.usersServices.gettotalarray(id);
 	}
 	@GetMapping("/api/v1/admin/status")
 	public Map<String, Integer> getTotalUsersAvgWorkoutDuration(){

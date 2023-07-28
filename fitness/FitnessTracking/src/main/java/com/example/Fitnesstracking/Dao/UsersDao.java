@@ -22,6 +22,6 @@ public interface UsersDao extends JpaRepository<Users,Integer> {
     int getTotalUsers();
 
 
-    @Query(value = "select *from users where email not like '%@virtusa.com'",nativeQuery = true)
+    @Query(value = "select * from users where email not like '%@virtusa.com'",nativeQuery = true)
     List<Users> findAllUser();
 }

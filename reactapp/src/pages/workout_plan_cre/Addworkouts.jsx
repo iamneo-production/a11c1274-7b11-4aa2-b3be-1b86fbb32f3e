@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import TimerIcon from '@mui/icons-material/Timer';
-import DescriptionIcon from '@mui/icons-material/Description';
+// import CloseIcon from '@mui/icons-material/Close';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import TimerIcon from '@mui/icons-material/Timer';
+// import DescriptionIcon from '@mui/icons-material/Description';
 import { postWorkout } from '../../services/user-service';
 import Swal from 'sweetalert2';
 import '../../index.css';
@@ -81,14 +81,14 @@ const Addworkouts = () =>{
             <div className="workout-container">
               <div className="workout-section">
                   <div className='heading-back-close'>
-                      <div >
-                          <ArrowBackIcon onClick={() => navigate("/user/workoutsplan")} />
+                      <div onClick={() => navigate("/user/workoutsplan")}>
+                           🔙 
                         </div>
                         <div className="workout-section-title"> 
                           <h2>Add Workouts</h2>
                         </div> 
-                        <div >
-                            <CloseIcon onClick={() => navigate("/user/workoutsplan")} />
+                        <div onClick={() => navigate("/user/workoutsplan")}>
+                            ❌
                         </div>
                   </div>
                         
@@ -109,9 +109,7 @@ const Addworkouts = () =>{
 
             <div className="workout-form-group">
               <div className="workout-input-container">
-                <div className='timer-icon'>
-                <TimerIcon/> 
-                </div>
+                
                 <input
                   
                   type="number"
@@ -126,9 +124,7 @@ const Addworkouts = () =>{
 
             <div className="workout-form-group">
               <div className="workout-input-container">
-                <div className='descrp-icon'>
-                <DescriptionIcon/>
-                </div>
+                
                 <textarea
                   placeholder="Enter workout Description"
                   className="input-icon"
