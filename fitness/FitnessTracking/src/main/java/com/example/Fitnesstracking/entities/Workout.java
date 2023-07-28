@@ -15,7 +15,9 @@ public class Workout {
     @SequenceGenerator(name = "workout_seq", sequenceName = "workout_sequence", initialValue = 1, allocationSize = 1)
     private int workoutId; //primary key
     private String date;
-    private int duration;
+
+    
+    private int duration=0;
     
     
     @Column(length = 30000) 
