@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Favorite } from '@mui/icons-material';
+// import { Favorite } from '@mui/icons-material';
 
 const ChallengeProgress = ({ challenge }) => {
   const [currentDay, setCurrentDay] = useState(1); // Track the current day of the challenge
@@ -24,7 +24,7 @@ const ChallengeProgress = ({ challenge }) => {
         Day {currentDay} of {challenge.duration}
       </p>
       {isChallengeCompleted ? (
-        <p>You have completed the whole challenge! <Favorite fontSize="inherit" style={{ animation: 'rainbow 1s infinite' }} /></p>
+        <p>You have completed the whole challenge! </p>
       ) : (
         <p>
           Completed: {completedDays} out of {challenge.duration} days

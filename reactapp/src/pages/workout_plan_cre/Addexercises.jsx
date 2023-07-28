@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
-import DescriptionIcon from '@mui/icons-material/Description';
-import  FitnessCenterIcon  from '@mui/icons-material/FitnessCenter';
-import  ArrowBackIcon  from '@mui/icons-material/ArrowBack';
+// import CloseIcon from '@mui/icons-material/Close';
+// import DescriptionIcon from '@mui/icons-material/Description';
+// import  FitnessCenterIcon  from '@mui/icons-material/FitnessCenter';
+// import  ArrowBackIcon  from '@mui/icons-material/ArrowBack';
 import Swal from 'sweetalert2';
 import { getWorkoutNamesbasedonUserId } from '../../services/user-service';
 import { postExercise } from '../../services/user-service';
@@ -96,14 +96,14 @@ const Addexercises = () =>{
         
         <div className="exercise-section">
           <div className='heading-back-close'>
-            <div >
-              <ArrowBackIcon onClick={()=>navigate("/user/addworkouts")} />
+            <div onClick={()=>navigate("/user/addworkouts")}>
+              🔙
             </div>
             <div className="exercise-section-title">
               <h2>Add Exercises</h2>
             </div>
-            <div >
-              <CloseIcon onClick={()=>navigate("/user/workoutsplan")} />
+            <div onClick={()=>navigate("/user/workoutsplan")}>
+              cancel
             </div>
           </div>
         
@@ -130,7 +130,7 @@ const Addexercises = () =>{
           <div className="exercise-form-group">
             <div className="exercise-input-container">
               <div className='fitness-icon'>
-              <FitnessCenterIcon/>
+              FitnessCenter
               </div>
               <input
                 type="text"
@@ -145,7 +145,7 @@ const Addexercises = () =>{
           <div className="exercise-form-group">
             <div className="exercise-input-container">
               <div className='descrp-icon'>
-              <DescriptionIcon/>
+              Description
               </div>
               <textarea
                 placeholder="Enter Exercise Description"
