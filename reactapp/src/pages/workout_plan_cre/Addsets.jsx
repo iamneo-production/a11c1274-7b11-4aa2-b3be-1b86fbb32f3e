@@ -157,9 +157,7 @@ const Addsets = () => {
           </div>
           <div className="sets-form-group">
             <div className="sets-input-container">
-              <div className='timeone-icon'>
-                <TimesOneMobiledataIcon />
-              </div>
+            
               <input
                 type="number"
                 placeholder="Enter Reps"
