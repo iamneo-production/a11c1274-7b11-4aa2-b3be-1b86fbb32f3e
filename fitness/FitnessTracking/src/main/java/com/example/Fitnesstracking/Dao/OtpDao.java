@@ -1,5 +1,6 @@
 package com.example.Fitnesstracking.Dao;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -17,4 +18,3 @@ public interface OtpDao extends JpaRepository<OneTimePassword, Long> {
 	@Query(value = "select *from one_time_password where user_id =:id", nativeQuery = true)
     OneTimePassword findByUserId(@Param("id") long id);
 }
-

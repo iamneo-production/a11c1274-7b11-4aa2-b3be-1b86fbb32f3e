@@ -44,6 +44,7 @@ public class GoalsServicesImpl implements GoalsServices{
         if (goals.getTimeFrame()!= null){goal.setTimeFrame(goals.getTimeFrame());}
         if (goals.getTargetValue()!=0){goal.setTargetValue(goals.getTargetValue());}
         if (goals.getAdditionalNotes()!= null){goal.setAdditionalNotes(goals.getAdditionalNotes());}
+        if (goals.getIs_completed()!=null){goal.setIs_completed(goals.getIs_completed());}
         return this.goalsDao.save(goal);
     }
 
@@ -52,12 +53,21 @@ public class GoalsServicesImpl implements GoalsServices{
 		Goals goal = goalsDao.findById(id)
                 .orElseThrow(()->new RuntimeException("id not found"));
 		goalsDao.delete(goal);
-		
+
 	}
 
 	@Override
 	public List<Goals> getGoalsUserById(int id) {
-		return goalsDao.getGoalsByUserId(id);
+		List<Goals> goals =  this.goalsDao.getGoalsByUserId(id);
+        System.out.println(goals);
+        return goals;
 	}
+
+	@Override
+	public long getTotalNumberOfGoals() {
+		return goalsDao.count();
+	}
+
+
 
 }

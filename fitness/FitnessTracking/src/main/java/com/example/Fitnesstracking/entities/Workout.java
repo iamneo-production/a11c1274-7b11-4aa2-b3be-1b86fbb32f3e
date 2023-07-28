@@ -1,9 +1,7 @@
 package com.example.Fitnesstracking.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.util.List;
@@ -17,9 +15,16 @@ public class Workout {
     @SequenceGenerator(name = "workout_seq", sequenceName = "workout_sequence", initialValue = 1, allocationSize = 1)
     private int workoutId; //primary key
     private String date;
-    private int duration;
+
+    
+    private int duration=0;
+    
+    
+    @Column(length = 30000) 
     private String notes;
-    private boolean is_completed;
+    
+    @Column(length = 3000) 
+    private String is_completed;
 
     @ManyToOne
     @JoinColumn(name = "user_id") //foreign key
@@ -50,16 +55,14 @@ public class Workout {
         super();
     }
 
-    public Workout(int workoutId, String date, int duration, String notes, boolean is_completed) {
-        super();
+    public Workout(int workoutId, String date, int duration, String notes, String is_completed) {
         this.workoutId = workoutId;
         this.date = date;
         this.duration = duration;
         this.notes = notes;
-        this.is_completed=is_completed;
+        this.is_completed = is_completed;
     }
 
-//    Setters and getters for instance variables
     public int getWorkoutId() {
         return workoutId;
     }
@@ -92,11 +95,11 @@ public class Workout {
         this.notes = notes;
     }
 
-    public boolean getIs_completed() {
+    public String getIs_completed() {
         return is_completed;
     }
 
-    public void setIs_completed(boolean is_completed) {
+    public void setIs_completed(String is_completed) {
         this.is_completed = is_completed;
     }
 }

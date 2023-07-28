@@ -1,0 +1,171 @@
+.exercise-tracking-page {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .completed-exercises {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+  }
+  
+  .exercise-progress {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .exercise-progress-circle {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px; 
+    margin-bottom: 10px; 
+    font-size: 20px; 
+    font-weight: bold;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px; 
+    font-size: 28px; 
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px; 
+    gap: 1rem;
+  }
+  
+  .input-container label {
+    margin-right: 10px;
+    font-size: 16px; 
+  }
+  
+  .input-container input[type="text"] {
+    padding: 10px; 
+    border: 1px solid #ccc;
+    font-size: 16px; 
+  }
+  
+  .input-container button {
+    margin: 0px;
+    padding: 10px 20px; 
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; 
+  }
+  
+  .input-container button:hover {
+    background-color: #45a049;
+  }
+  
+  .exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(63, 61, 61, 0.858);
+    table-layout: fixed;
+    background-color: #eaeaea;
+  }
+  
+  .exercise-table th,
+  .exercise-table td {
+    padding: 16px; 
+    border: 1px solid #ccc;
+  }
+  
+  .exercise-table th {
+    background-color: #dcdcdc;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    padding: 16px;
+  }
+  
+  .exercise-table tr {
+    background-color: #f9f9f9;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 30px; 
+    font-size: 16px; 
+  }
+  
+  .exercise-table td {
+    color: #333;
+    padding: 16px;
+  }
+  
+  .exercise-table tr:hover {
+    background-color: #dcdcdc;
+  }
+  
+  .exercise-progress-circle .meter {
+    width: 100%;
+    height: 100%;
+    background-color: #e1e1e1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .exercise-progress-circle .fill {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s ease;
+    border-radius: 50%;
+  }
+  
+  .exercise-progress-circle .exercise-progress-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    pointer-events: none;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .exercise-progress-circle .exercise-progress-count {
+    margin: 0 2px;
+  }
+  
+  .exercise-progress-circle .exercise-progress-slash {
+    margin: 0 5px;
+  }
+  
+  .exercise-table tr.completed-exercise {
+    background-color: #4caf50;
+    color: #fff; 
+  }
+  
+  .exercise-table th,
+  .exercise-table td.completed-exercise {
+    border-color: #4caf50; 
+  }
+  
