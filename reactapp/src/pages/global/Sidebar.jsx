@@ -5,27 +5,14 @@ import "react-pro-sidebar/dist/css/styles.css";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { Link } from "react-router-dom";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import FlagIcon from '@mui/icons-material/Flag';
-import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
-import HistoryIcon from '@mui/icons-material/History';
-import AddIcon from '@mui/icons-material/Add';
-import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import PeopleIcon from '@mui/icons-material/People';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
-import PieChartIcon from '@mui/icons-material/PieChart';
-import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
-import { Button } from "reactstrap";
+
+
 import { useEffect } from "react";
 import { doLogout, isLoggedIn } from "../../auth";
 import { useNavigate } from "react-router-dom";
-import AddTaskIcon from '@mui/icons-material/AddTask';
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+
+const Item = ({ title, to, selected, setSelected }) => {
   const handleUrlClick = (e, to) => {
     const currentUrl = window.location.href;
     console.log("redirecting url --> ", to);
@@ -45,7 +32,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
         color: colors.grey[100],
       }}
       onClick={() => setSelected(title)}
-      icon={icon}
+      //icon={icon}
     >
       <Typography>{title}</Typography>
       <Link to={to} onClick={(e) => handleUrlClick(e, to)} />
@@ -109,7 +96,7 @@ const Sidebar = () => {
                 {/* LOGO AND MENU ICON */}
                 <MenuItem
                   onClick={() => setIsCollapsed(!isCollapsed)}
-                  icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+                  // icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
                   style={{
                     margin: "10px 0 20px 0",
                     color: colors.grey[100],
@@ -123,9 +110,9 @@ const Sidebar = () => {
                       ml="15px"
                     >
 
-                      <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                      {/* <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                         <MenuOutlinedIcon />
-                      </IconButton>
+                      </IconButton> */}
                     </Box>
                   )}
                 </MenuItem>
@@ -134,7 +121,7 @@ const Sidebar = () => {
                   <Item
                     title="Profile"
                     to="profile"
-                    icon={<AccountCircleIcon />}
+                    // icon={<AccountCircleIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -143,7 +130,7 @@ const Sidebar = () => {
                   <Item
                     title="Dashboard"
                     to="dashboard"
-                    icon={<HomeOutlinedIcon />}
+                    // icon={<HomeOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -151,7 +138,7 @@ const Sidebar = () => {
                   <Item
                     title="Workouts plan creator "
                     to="workoutsplan"
-                    icon={<AddIcon />}
+                    // icon={<AddIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -159,21 +146,21 @@ const Sidebar = () => {
                   <Item
                     title="View workouts"
                     to="viewworkouts"
-                    icon={<TimelineOutlinedIcon />}
+                    // icon={<TimelineOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
                   <Item
                     title="View Exercise "
                     to="viewexercises"
-                    icon={<HistoryIcon />}
+                    // icon={<HistoryIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
                   <Item
                     title="Track Exercises"
                     to="trackexercises"
-                    icon={<FitnessCenterIcon />}
+                    // icon={<FitnessCenterIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -181,14 +168,14 @@ const Sidebar = () => {
                   <Item
                     title="Workouts history"
                     to="workoutshistory"
-                    icon={<WorkHistoryIcon />}
+                    // icon={<WorkHistoryIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
                   <Item
                     title="Goal setting"
                     to="goalsetting"
-                    icon={<FlagIcon />}
+                    // icon={<FlagIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -196,7 +183,7 @@ const Sidebar = () => {
                   <Item
                     title="Nutrition"
                     to="nutritionrecommendation"
-                    icon={<LocalPharmacyIcon />}
+                    // icon={<LocalPharmacyIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -205,39 +192,19 @@ const Sidebar = () => {
                   <Item
                     title="Pie Chart"
                     to="piechart"
-                    icon={<PieChartIcon />}
+                    // icon={<PieChartIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
                   <Item
                     title="Line graph"
                     to="linegraph"
-                    icon={<StackedLineChartIcon />}
+                    // icon={<StackedLineChartIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
 
-                  <Item
-                    title="Workout Tutorials"
-                    to="tutorial"
-                    icon={<FitnessCenterIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="Calculator"
-                    to="calculators"
-                    icon={<CalculateOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                   <Item
-                    title="Challenges"
-                    to="take-challenge"
-                    icon={<AddTaskIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
+                 
 
 
 
@@ -247,13 +214,7 @@ const Sidebar = () => {
                     alignItems="center"
                     mt="20px"
                   >
-                    <Button
-                      color="dark"
-                      outline
-                      onClick={logout}
-                    >
-                      Log Out
-                    </Button>
+                    <button onClick={logout}>Logout</button>
                   </Box>
                 </Box>
               </Menu>
@@ -289,7 +250,7 @@ const Sidebar = () => {
                 {/* LOGO AND MENU ICON */}
                 <MenuItem
                   onClick={() => setIsCollapsed(!isCollapsed)}
-                  icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+                  // icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
                   style={{
                     margin: "10px 0 20px 0",
                     color: colors.grey[100],
@@ -303,9 +264,9 @@ const Sidebar = () => {
                       ml="15px"
                     >
 
-                      <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                      {/* <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                         <MenuOutlinedIcon />
-                      </IconButton>
+                      </IconButton> */}
                     </Box>
                   )}
                 </MenuItem>
@@ -318,7 +279,7 @@ const Sidebar = () => {
                   <Item
                     title="Admin Dashboard"
                     to="admindashboard"
-                    icon={<HomeOutlinedIcon />}
+                    // icon={<HomeOutlinedIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -327,7 +288,7 @@ const Sidebar = () => {
                   <Item
                     title="Operations"
                     to="ops"
-                    icon={<PeopleIcon />}
+                    // icon={<PeopleIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -335,7 +296,7 @@ const Sidebar = () => {
                   <Item
                     title="Profile"
                     to="profile"
-                    icon={<AccountCircleIcon />}
+                    // icon={<AccountCircleIcon />}
                     selected={selected}
                     setSelected={setSelected}
                   />
@@ -346,13 +307,7 @@ const Sidebar = () => {
                     alignItems="center"
                     mt="20px"
                   >
-                    <Button
-                      color="dark"
-                      outline
-                      onClick={logout}
-                    >
-                      Log Out
-                    </Button>
+                    <button onClick={logout}>Logout</button>
                   </Box>
                 </Box>
               </Menu>

@@ -5,10 +5,10 @@ import { tokens } from "../../theme";
 import Header from "../../components/Header";
 import Sidebar from '../global/Sidebar';
 import '../../../src/index.css';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
-import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts';
-import StarPurple500Icon from '@mui/icons-material/StarPurple500';
+// import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+// import SportsGymnasticsIcon from '@mui/icons-material/SportsGymnastics';
+// import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts';
+// import StarPurple500Icon from '@mui/icons-material/StarPurple500';
 import StatBox from './StatBox';
 import {getnotcompletedexercisesbyuserid, getnotcompletedgoalsbyuserid, getnotcompletedsetsbyuserid, getnotcompletedworkoutsbyuserid, getotalworkoutsforuserid, gettotalexercisesforuserid, gettotalgoalsforuserid, gettotalsetsforuserid} from "../../data/mockData";
 import Linecode from './Linecode';
@@ -185,11 +185,11 @@ const Dashboard = () => {
             subtitle="pending workouts- "
             progress={(notCompletedWorkouts / totalWorkouts)*0.1} // (not done/ total)
             increase={notCompletedWorkouts} //not done workouts 
-            icon={
-              <FitnessCenterIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            // icon={
+            //   <FitnessCenterIcon
+            //     sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+            //   />
+            // }
           />
         </Box>
         <Box
@@ -204,11 +204,11 @@ const Dashboard = () => {
             subtitle="Pending exercises -"
             progress={(notCompletedExercises / totalExercises)*0.1}
             increase={notCompletedExercises}
-            icon={
-              <SportsGymnasticsIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            // icon={
+            //   <SportsGymnasticsIcon
+            //     sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+            //   />
+            // }
           />
         </Box>
         <Box
@@ -223,11 +223,11 @@ const Dashboard = () => {
             subtitle="Ppending sets - "
             progress={(notCompletedSets / totalSets)*0.1}
             increase={notCompletedSets}
-            icon={
-              <SportsMartialArtsIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            // icon={
+            //   <SportsMartialArtsIcon
+            //     sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+            //   />
+            // }
           />
         </Box>
         <Box
@@ -243,11 +243,11 @@ const Dashboard = () => {
             subtitle="pending goals -"
             progress={(notCompletedGoals / totalGoals)*0.1}
             increase={notCompletedGoals}
-            icon={
-              < StarPurple500Icon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+            // icon={
+            //   < StarPurple500Icon
+            //     sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+            //   />
+            // }
           />
         </Box>
             {/* ROW 2 */}
