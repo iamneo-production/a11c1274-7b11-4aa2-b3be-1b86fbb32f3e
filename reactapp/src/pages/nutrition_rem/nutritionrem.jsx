@@ -1,57 +1,69 @@
-import React from 'react';
-import "./Nrem.css";
-const Nutable = ({ data }) => {
-  return (
-    <div >
-      <h2>Meals</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Ready in Minutes</th>
-            
-            <th>Source URL</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.meals.map((meal) => (
-            <tr key={meal.id}>
-              <td>{meal.id}</td>
-              <td>{meal.title}</td>
-              <td>{meal.readyInMinutes}</td>
-           
-              <td>
-                <a href={meal.sourceUrl} target="_blank" rel="noopener noreferrer">
-                  {meal.sourceUrl}
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+import React, { useState,useEffect } from 'react' 
+import Nutable from './Nutable';
+import Sidebar from '../global/Sidebar';
+const Nutritionrem = () => {
+    
+    
+    
+const [data, setData] = useState(null);
+const [tables, setTables] = useState([]);
+const [mealCount, setMealCount] = useState(1);
+const [clickCount, setClickCount] = useState(0);
 
-      <h2>Nutrients</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Calories</th>
-            <th>Protein</th>
-            <th>Fat</th>
-            <th>Carbohydrates</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{data.nutrients.calories}</td>
-            <td>{data.nutrients.protein}</td>
-            <td>{data.nutrients.fat}</td>
-            <td>{data.nutrients.carbohydrates}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+const generateData = async () => {
+
+  if (clickCount >= 3) {
+      alert('You have reached the maximum limit of clicks.');
+      return;
+    }
+
+  try {
+    const response = await fetch("https://api.spoonacular.com/mealplanner/generate?apiKey=f1959661f9fb468a84f96745c601a448&timeFrame=night&targetCalories=100");
+    const jsonData = await response.json();
+
+
+          // Generate a new ID for each meal
+          const mealsWithId = jsonData.meals.map((meal, index) => ({
+              ...meal,
+              id: mealCount + index,
+            }));
+      
+            const newTable = <Nutable key={tables.length} data={{ ...jsonData, meals: mealsWithId }} />;
+   
+    setTables([...tables, newTable]);
+    console.log(jsonData);
+    setData(jsonData);
+    setClickCount(clickCount + 1);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
 };
 
-export default Nutable;
+return (
+
+  <div className="app">
+     <Sidebar/>
+     <main className="content">
+     <div>
+    <h1>Meal Data</h1>
+    {tables.length > 0 ? (
+      tables.map((table) => table)
+    ) : (
+      <p>No data available</p>
+    )}
+    <br></br>
+    <center>{clickCount < 3 && (
+      
+      <button type="button" onClick={generateData}>Generate More!</button>
+    )}</center>
+    
+  </div>
+     </main>
+  </div>
+
+  
+);
+};
+
+
+export default Nutritionrem

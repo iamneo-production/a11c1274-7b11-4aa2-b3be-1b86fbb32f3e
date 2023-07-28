@@ -30,7 +30,7 @@ public interface WorkoutDao extends JpaRepository<Workout,Integer> {
    @Query(value = "select *from workout where workout_id =:id and user_id =:uid", nativeQuery = true)
    Workout getWorkoutByUserId(@Param("uid") int uid,@Param("id") int id);
 
-  @Query(value = "select avg(duration) from workout", nativeQuery = true)
+  @Query(value = "select coalesce(avg(duration), 0) from workout", nativeQuery = true)
    int getAvgWorkoutDuration();
 
   @Query(value = "select count(*) from workout",nativeQuery = true)

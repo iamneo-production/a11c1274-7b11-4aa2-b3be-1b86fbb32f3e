@@ -1,6 +1,5 @@
 package com.example.Fitnesstracking.entities;
 
-import jakarta.persistence.GeneratedValue;
 
 
 
@@ -24,7 +23,7 @@ public class Users implements UserDetails{
 
     //instance variables
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; //primary key
     
     @Column(name = "user_name", nullable = false, length = 100)
