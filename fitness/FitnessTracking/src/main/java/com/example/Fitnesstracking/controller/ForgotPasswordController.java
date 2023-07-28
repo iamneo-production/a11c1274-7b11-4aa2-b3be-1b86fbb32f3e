@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Fitnesstracking.Dao.UsersDao;
 import com.example.Fitnesstracking.services.UsersServices;
 
-import jakarta.mail.MessagingException;
+import javax.mail.MessagingException;
 
 @RestController
 @CrossOrigin(origins = "*")

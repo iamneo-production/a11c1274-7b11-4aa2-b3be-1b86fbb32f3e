@@ -10,8 +10,8 @@ import { getGoals,deleteGoalsById} from '../../services/user-service';
 import { useState } from 'react';
 import Swal from "sweetalert2";
 import './goalsetting.css';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+// import EditIcon from '@mui/icons-material/Edit';
+// import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const goalsetting = () => {
@@ -97,10 +97,10 @@ const goalsetting = () => {
                             <td>{eachGoal.is_completed}</td>
                             <td className='actions'>
                               <button onClick={() => handleEdit(eachGoal.goal_id)}>
-                              <EditIcon/>
+                              Edit
                                 </button>
                                 <button onClick={() => handleDeleteGoals(eachGoal.goal_id)}>
-                                <DeleteIcon/>
+                                Delete
                                 </button>
                             </td> 
                         </tr>
