@@ -1,5 +1,8 @@
 package com.example.Fitnesstracking.config;
 
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -23,18 +26,13 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import java.util.stream.Stream;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.security.web.util.matcher.RequestMatcher;
 
 import com.example.Fitnesstracking.security.CustomUserDetailService;
 import com.example.Fitnesstracking.security.JwtAutenticationEntryPoint;
 import com.example.Fitnesstracking.security.JwtAuthenticationFilter;
 
 //import com.codewithdurgesh.blog.security.CustomUserDetailService;
-import org.springframework.security.web.util.matcher.RequestMatcher;
+
 
 @Configuration
 @EnableWebSecurity
@@ -42,11 +40,17 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
-
-    public static final String[] PUBLIC_URLS = {"/api/v1/auth/**", "/v3/api-docs", "/v2/api-docs",
-            "/swagger-resources/**", "/swagger-ui/**", "/webjars/**", "/api/v1/auth/register","/api/v1/send-otp","/api/v1/resend-otp","/api/v1/verify-otp"
-
-    ,"/api/v1/set-password"};
+    public static final String[] PUBLIC_URLS = {
+        "/api/v1/auth/**",
+        "/swagger-resources/**",
+        "/swagger-ui/**",
+        "/webjars/**",
+        "/api/v1/auth/register",
+        "/api/v1/send-otp",
+        "/api/v1/resend-otp",
+        "/api/v1/verify-otp",
+        "/api/v1/set-password"
+};
 
     @Autowired
     private CustomUserDetailService customUserDetailService;
@@ -59,13 +63,16 @@ public class SecurityConfig {
     		
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    RequestMatcher[] requestMatchers = new AntPathRequestMatcher[PUBLIC_URLS.length];
+    for (int i = 0; i < PUBLIC_URLS.length; i++) {
+        requestMatchers[i] = new AntPathRequestMatcher(PUBLIC_URLS[i]);
+    }
 
-        http.
-        csrf()
-        .disable()
+    http
+        .csrf().disable()
         .authorizeHttpRequests()
-        .requestMatchers(getRequestMatchers(PUBLIC_URLS))
+        .requestMatchers(requestMatchers)
         .permitAll()
         .anyRequest()
         .authenticated()
@@ -75,20 +82,14 @@ public class SecurityConfig {
         .sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        http.authenticationProvider(daoAuthenticationProvider());
-        DefaultSecurityFilterChain defaultSecurityFilterChain = http.build();
+    http.authenticationProvider(daoAuthenticationProvider());
+    DefaultSecurityFilterChain defaultSecurityFilterChain = http.build();
 
-        return defaultSecurityFilterChain;
+    return defaultSecurityFilterChain;
+}
 
-
-    }
-    private RequestMatcher[] getRequestMatchers(String[] urls) {
-        return Stream.of(urls)
-                .map(AntPathRequestMatcher::new)
-                .toArray(RequestMatcher[]::new);
-    }
 
 
 

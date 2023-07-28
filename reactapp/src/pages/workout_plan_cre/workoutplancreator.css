@@ -1,0 +1,56 @@
+/* button {
+    padding: 10px 20px;
+    background-color: rgba(60, 59, 59,80%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition:0.5s;
+  }  */
+  .button-group Button{
+    
+    padding: 10px 20px;
+    background-color: rgba(60, 59, 59,80%);
+    color:white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition:0.5s;
+    margin-right: 100px; 
+    margin-left: 80px;
+   
+    text-align: center;
+    
+    /* padding: 10px 14px; */
+    width:40%;
+    margin-bottom: 20px 
+      
+      
+  }
+   .button-group  :hover{
+    letter-spacing: 0.15em;
+    box-shadow: 0 0 35px #009dc4;
+   }
+  
+  
+  /* h1 {
+    margin-left: 390px;
+    color:white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-decoration: underline;
+    
+  } */
+  
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: 300px;
+    padding:40px 24px;
+  
+}
