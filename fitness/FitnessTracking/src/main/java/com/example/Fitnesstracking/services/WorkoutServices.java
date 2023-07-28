@@ -26,6 +26,8 @@ public interface WorkoutServices {
 	long gettotalworkouts(int id);
 
 	List<CompletedWorkout> getCompleted(int id);
+    
+    List<Workout> getCompletedWorkoutsByUserId(int id);
 
 
 }
