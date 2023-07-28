@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import TimerIcon from '@mui/icons-material/Timer';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import TimesOneMobiledataIcon from '@mui/icons-material/TimesOneMobiledata';
+// import CloseIcon from '@mui/icons-material/Close';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+// import TimerIcon from '@mui/icons-material/Timer';
+// import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+// import TimesOneMobiledataIcon from '@mui/icons-material/TimesOneMobiledata';
 import Swal from 'sweetalert2';
 import { postSet } from '../../services/user-service';
 import { getEidonWid } from '../../services/user-service';
@@ -112,14 +112,14 @@ const Addsets = () => {
       <div className="sets-container">
         <div className="sets-section">
         <div className='heading-back-close'>
-            <div >
-              <ArrowBackIcon onClick={() => navigate("/user/addexercises")} />
+            <div onClick={() => navigate("/user/addexercises")}>
+               🔙
             </div>
             <div className="workout-section-title">
               <h2>Add Sets</h2>
             </div>
-            <div >
-              <CloseIcon onClick={() => navigate("/user/workoutsplan")} />
+            <div onClick={() => navigate("/user/workoutsplan")}>
+              ❌  
             </div>
           </div>
 
@@ -172,9 +172,7 @@ const Addsets = () => {
 
           <div className="sets-form-group">
             <div className="sets-input-container">
-              <div className='fitness-icon'>
-                <FitnessCenterIcon />
-              </div>
+              
               <input
                 type="number"
                 placeholder="Enter Weight"
@@ -187,9 +185,7 @@ const Addsets = () => {
 
           <div className="sets-form-group">
             <div className="sets-input-container">
-              <div className='timer-icon'>
-                <TimerIcon />
-              </div>
+              
               <input
                 type="number"
                 placeholder="Enter Duration"
