@@ -1,29 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
-import "react-pro-sidebar/dist/css/styles.css";
+
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { Link } from "react-router-dom";
-// import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-// import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-// import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-// import FlagIcon from '@mui/icons-material/Flag';
-// import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
-// import HistoryIcon from '@mui/icons-material/History';
-// import AddIcon from '@mui/icons-material/Add';
-// import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
-// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-// import PeopleIcon from '@mui/icons-material/People';
-// import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-// import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
-// import PieChartIcon from '@mui/icons-material/PieChart';
-// import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
-import { Button } from "reactstrap";
+
+
 import { useEffect } from "react";
 import { doLogout, isLoggedIn } from "../../auth";
 import { useNavigate } from "react-router-dom";
-// import AddTaskIcon from '@mui/icons-material/AddTask';
+
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const handleUrlClick = (e, to) => {
@@ -217,27 +204,7 @@ const Sidebar = () => {
                     setSelected={setSelected}
                   />
 
-                  <Item
-                    title="Workout Tutorials"
-                    to="tutorial"
-                    // icon={<FitnessCenterIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                  <Item
-                    title="Calculator"
-                    to="calculators"
-                    // icon={<CalculateOutlinedIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
-                   <Item
-                    title="Challenges"
-                    to="take-challenge"
-                    // icon={<AddTaskIcon />}
-                    selected={selected}
-                    setSelected={setSelected}
-                  />
+                 
 
 
 

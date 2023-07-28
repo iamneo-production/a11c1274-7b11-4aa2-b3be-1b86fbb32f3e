@@ -10,10 +10,10 @@ import Goalsetting from './pages/goalsetting/goalsetting';
 import Workoutplancre from "./pages/workout_plan_cre/workoutplancre";
 import WorkoutsPage from "./pages/workout_history/WorkoutsPage";
 import Nutritionrem from "./pages/nutrition_rem/nutritionrem";
-import Barchart from './pages/charts&graph/barchart';
+
 import Linegraph from "./pages/charts&graph/linegraph";
 import Piechart from "./pages/charts&graph/Piechart.jsx";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Privateroute from "./components/Privateroute";
 import About from "./components/About";
 import Setpassword from "./components/Setpass";
@@ -27,12 +27,11 @@ import UpdateGoals from "./pages/goalsetting/UpdateGoals";
 import Addworkouts from "./pages/workout_plan_cre/Addworkouts";
 import Addexercises from "./pages/workout_plan_cre/Addexercises";
 import Addsets from "./pages/workout_plan_cre/Addsets";
-import { DateProvider } from "./pages/workout_plan_cre/dateContext";
-import { ExerciseProvider } from "./pages/workout_plan_cre/exerciseContext";
+
 import NotFoundPage from "./pages/global/NotFoundPage";
 import Admindashboard from "./components/Adminops";
 import { useEffect, useState } from "react";
-import Radar from "./pages/charts&graph/Radar";
+
 import Trackexercise from "./pages/trackexr/Trackexercise";
 import ViewExercises from "./pages/workout_plan_cre/ViewExercises";
 import ViewWorkouts from "./pages/workout_plan_cre/ViewWorkouts";
@@ -40,28 +39,9 @@ import UpdateWorkouts from "./pages/workout_plan_cre/UpdateWorkouts";
 import UpdateExercises from "./pages/workout_plan_cre/UpdateExercises";
 // import ExerciseHistory from "./pages/workout_history/WorkoutsPage";
 import Admindash from "./pages/dashboard/Admindash";
-import Sidebar from "./pages/global/Sidebar";
+
 import Adminops from "./components/Adminops";
 
-
-import Tutorial from './pages/workout_tutorial/Tutorial';
-import FullBody from './pages/workout_tutorial/FullBody';
-import BellyFat from './pages/workout_tutorial/BellyFat';
-import Arm from './pages/workout_tutorial/Arm';
-import Leg from './pages/workout_tutorial/Leg';
-import Abs from './pages/workout_tutorial/Abs';
-import Chest from './pages/workout_tutorial/Chest';
-import Warmup from './pages/workout_tutorial/Warmup';
-import Pomodoro from './pages/workout_tutorial/Pomodoro';
-
-import Main from './pages/calculator/Main';
-import Bmi from './pages/calculator/Bmi';
-import Bmr from './pages/calculator/Bmr';
-import Bfp from './pages/calculator/Bfp';
-import Cc from './pages/calculator/Cc';
-
-
-import TakeChallengesPage from "./pages/take_challenges/TakeChallengesPage";
 
 
 function App() {
@@ -91,8 +71,7 @@ function App() {
         <div className="app">
           {/* <Sidebar isSidebar={isSidebar}/> */}
           <main className="content">
-            <DateProvider>
-              <ExerciseProvider>
+           
                 <Routes>
                   <Route path='/' element={<Land />} />
                   <Route path='/login' element={<Login showAlert={showAlert} />} />
@@ -129,30 +108,14 @@ function App() {
                     <Route path="viewworkouts" element={<ViewWorkouts />} />
                     <Route path="update-workout/:id" element={<UpdateWorkouts />} />
                     <Route path="update-exercise/:id" element={<UpdateExercises />} />
-                    <Route path="tutorial" element={<Tutorial/>}/>
-                    <Route path="tutorial/full-body" element={<FullBody/>}/>
-                    <Route path="tutorial/belly-fat" element={<BellyFat/>}/>
-                    <Route path="tutorial/arm-workout" element={<Arm/>}/>
-                    <Route path="tutorial/leg-workout" element={<Leg/>}/>
-                    <Route path="tutorial/abs-workout" element={<Abs/>}/>
-                    <Route path="tutorial/chest-workout" element={<Chest/>}/>
-                    <Route path="tutorial/warm-ups" element={<Warmup/>}/>
-
-                    <Route path="calculators" element={<Main/>}/>
-                    <Route path="calculators/Bmi" element={<Bmi/>}/>
-                    <Route path="calculators/Bmr" element={<Bmr/>}/>
-                    <Route path="calculators/Bfp" element={<Bfp/>}/>
-                    <Route path="calculators/Cc" element={<Cc/>}/> 
-
-                    <Route path="take-challenge" element={<TakeChallengesPage/>}/>
+                  
                     {/* <Route path="*" element={<NotFoundPage/>} /> */}
                   </Route>
 
 
 
                 </Routes>
-              </ExerciseProvider>
-            </DateProvider>
+             
 
           </main>
         </div>
