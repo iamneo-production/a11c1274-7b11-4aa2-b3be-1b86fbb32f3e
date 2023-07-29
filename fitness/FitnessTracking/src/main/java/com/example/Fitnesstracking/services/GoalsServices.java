@@ -15,5 +15,8 @@ public interface GoalsServices {
 	void deleteGoalsById(int id);
 
 	List<Goals> getGoalsUserById(int id);
-}
 
+	long getTotalNumberOfGoals();
+
+
+}

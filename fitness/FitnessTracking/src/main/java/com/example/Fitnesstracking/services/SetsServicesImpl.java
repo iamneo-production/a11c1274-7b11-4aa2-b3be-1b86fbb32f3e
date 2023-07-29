@@ -45,7 +45,6 @@ public class SetsServicesImpl implements SetsServices{
         if (sets.getReps()!=0){set.setReps(sets.getReps());}
         if (sets.getWeight()!=0){set.setWeight(sets.getWeight());}
         if (sets.getDuration()!=0){set.setDuration(sets.getDuration());}
-//        set.setIs_completed(sets.getIs_completed());
         return setsDao.save(set);
     }
 
@@ -55,5 +54,16 @@ public class SetsServicesImpl implements SetsServices{
                 .orElseThrow(()-> new RuntimeException(("Sets Id is not found to delete Sets")));
         setsDao.delete(sets);
     }
+
+	@Override
+	public long getTotalNumberOfSets() {
+		// TODO Auto-generated method stub
+		return setsDao.count();
+	}
+
+	@Override
+	public List<Integer> findSetIdsByExerciseId(int id) {
+		return setsDao.findSetIdsByExerciseId(id);
+	}
 
 }

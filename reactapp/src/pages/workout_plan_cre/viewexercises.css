@@ -1,0 +1,92 @@
+/* .track-exercise-container {
+    margin-top: 10px;
+    margin-right: 100px;
+    overflow-x: auto;
+  } */
+  
+  /* .track-exercise-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-left: 120px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+  } */
+  
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+     margin-right: 120px;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 16px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #656a70;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #2e445a;
+  }
+  
+  .styled-table th {
+    background-color: #112233;
+    border-top: 2px solid #112233;
+    color: #ffffff;
+  }
+  
+  .styled-table tr:nth-child(even) {
+    background-color: #97b2cc;
+  }
+  
+  .styled-table tr:hover {
+    background-color: #81c0ff;
+    cursor: pointer;
+  }
+  
+  .action-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    size: 20px;
+  }
+  
+  .action-icons span{
+    border: 1px solid black;
+  }
+  .action-icons svg {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #ccf419;
+    transition: 0.3s;
+  }
+  
+  .action-icons svg:hover {
+    color: #f00505;
+    transform: scale(1.2);
+  }
+  
+  .track-ex-go-back-button {
+    width: 120px;
+    background-color: rgba(60, 59, 59, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 650px;
+    transition: 0.3s;
+  }
+  
+  .track-ex-go-back-button:hover {
+    background-color: rgba(60, 59, 59, 1);
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 10px #dd4499;
+  }
+  

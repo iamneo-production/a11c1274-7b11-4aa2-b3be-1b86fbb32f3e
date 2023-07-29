@@ -1,7 +1,8 @@
 package com.example.Fitnesstracking.entities;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class Exercise {
     private int exerciseId; //primary key
     private String name;
     private String description;
-    private boolean is_completed;
+    private String is_completed;
 
     @ManyToOne
     @JoinColumn(name = "workout_workout_id")
@@ -45,15 +46,13 @@ public class Exercise {
         super();
     }
 
-    public Exercise(int exerciseId, String name, String description, boolean is_completed) {
-        super();
+    public Exercise(int exerciseId, String name, String description, String is_completed) {
         this.exerciseId = exerciseId;
         this.name = name;
         this.description = description;
         this.is_completed = is_completed;
     }
 
-    //    Setters and getters for instance variables
     public int getExerciseId() {
         return exerciseId;
     }
@@ -78,11 +77,11 @@ public class Exercise {
         this.description = description;
     }
 
-    public boolean getIs_completed() {
+    public String getIs_completed() {
         return is_completed;
     }
 
-    public void setIs_completed(boolean is_completed) {
+    public void setIs_completed(String is_completed) {
         this.is_completed = is_completed;
     }
 }
